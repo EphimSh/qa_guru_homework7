@@ -34,8 +34,8 @@ public class VerificationWindow {
         tableResponsive.$(byText("Date of Birth")).sibling(0).shouldHave(text(birthDate));
         return  this;
     }
-    public VerificationWindow verifyStudentSubject(String Subjects) {
-        tableResponsive.$(byText("Subjects")).sibling(0).shouldHave(text(Subjects));
+    public VerificationWindow verifyStudentSubject(String Subject) {
+        tableResponsive.$(byText("Subjects")).sibling(0).shouldHave(text(Subject));
         return  this;
     }
     public VerificationWindow verifyStudentHobbies(String hobbies) {
