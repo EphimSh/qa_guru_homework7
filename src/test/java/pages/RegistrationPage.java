@@ -3,7 +3,7 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
-import pages.component.CalendarComponent;
+import pages.component.calendar.CalendarComponent;
 
 import java.io.File;
 import java.util.ArrayList;
