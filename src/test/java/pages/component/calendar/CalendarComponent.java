@@ -1,7 +1,6 @@
-package pages.component;
+package pages.component.calendar;
 
 import com.codeborne.selenide.SelenideElement;
-import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byTextCaseInsensitive;
