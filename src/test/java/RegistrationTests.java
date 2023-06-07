@@ -1,14 +1,14 @@
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import pages.component.verification.VerificationWindow;
+import pages.component.verification.RegistrationFormVerificationWindow;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class RegistrationTestsWithPOM extends TestBase {
+public class RegistrationTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    VerificationWindow verificationWindow = new VerificationWindow();
+    RegistrationFormVerificationWindow verificationWindow = new RegistrationFormVerificationWindow();
 
     @Test
     void mySuccessfulRegistrationFormTest(){
