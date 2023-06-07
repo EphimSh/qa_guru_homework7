@@ -16,9 +16,9 @@ public class TextBoxTest extends TestBase {
                 .pressSubmitButton();
 
         textBoxVerification
-                .verifyFullName("Addis", "Ababa")
-                .verifyEmail("addisababa@mail.com")
-                .verifyCurrAddress("woods")
-                .verifyPermanentAddress("saint-petersburg");
+                .outputVerification("Name", "Addis Ababa")
+                .outputVerification("Email", "addisababa@mail.com")
+                .outputVerification("Curr", "woods")
+                .outputVerification("Perm", "saint-petersburg");
     }
 }

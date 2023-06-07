@@ -2,13 +2,12 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.component.verification.RegistrationFormVerificationWindow;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationFormVerificationWindow verificationWindow = new RegistrationFormVerificationWindow();
+    public static String imgFilePath = "src/test/resources/haha.jpg";
 
     @Test
     void mySuccessfulRegistrationFormTest(){
@@ -27,16 +26,17 @@ public class RegistrationTests extends TestBase {
                 .selectStateAndCity("NCR", "Gurgaon") // NCR : Delhi, Gurgaon, Noida; Uttar Pradesh : Arga, Lucknow, Merrut
                 .pressSubmitButton();
 
+
         verificationWindow
-                .verifyStudentFullName("Addis Ababa")
-                .verifyStudentEmail("addisababa@mail.com")
-                .verifyStudentGender("other")
-                .verifyStudentMobileNumber("1010101010")
-                .verifyStudentBirthDate("16", "february", "1992")
-                .verifyStudentSubject("Computer Science")
-                .verifyStudentHobbies("Sports,Reading, Music")
-                .verifyStudentUploadedPicture(imgFilePath)
-                .verifyStudentAddress("Russia, Saint-Petersburg")
-                .verifyStudentStateAndCity("NCR", "Gurgaon");
+                .formVerificationWindow("Student Name", "Addis Ababa")
+                .formVerificationWindow("Student Email", "addisababa@mail.com")
+                .formVerificationWindow("Gender", "other")
+                .formVerificationWindow("Mobile", "1010101010")
+                .formVerificationWindow("Date of Birth", "16 february,1992")
+                .formVerificationWindow("Subjects", "Computer Science")
+                .formVerificationWindow("Hobbies", "Sports, Reading, Music")
+                .formVerificationWindow("Picture", "haha.jpg")
+                .formVerificationWindow("Address", "Saint-Petersburg")
+                .formVerificationWindow("State and City", "NCR Gurgaon");
     }
 }
