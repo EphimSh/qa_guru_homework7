@@ -30,8 +30,8 @@ public class RegistrationPage {
             currentAddressField = $("#currentAddress"),
             stateDropDown = $("#state"),
             cityDropDown = $("#city"),
-            submitButton = $("#submit");
-
+            submitButton = $("#submit"),
+            tableResponsive = $(".table-responsive");
 
 
 
@@ -42,11 +42,14 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("automation-practice-form");
+        return this;
+    }
+
+    public RegistrationPage removeBanner(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
-
 
     public RegistrationPage setFirstName(String name) {
         firstNameInput.setValue(name);
@@ -118,6 +121,11 @@ public class RegistrationPage {
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
+        return this;
+    }
+
+    public RegistrationPage formVerificationWindow(String key, String value){
+        tableResponsive.$(byText(key)).sibling(0).shouldHave(text(value));
         return this;
     }
 }
