@@ -1,12 +1,10 @@
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import pages.component.verification.RegistrationFormVerificationWindow;
 
 
 public class RegistrationTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    RegistrationFormVerificationWindow verificationWindow = new RegistrationFormVerificationWindow();
     public static String imgFilePath = "src/test/resources/haha.jpg";
 
     @Test
@@ -27,7 +25,7 @@ public class RegistrationTests extends TestBase {
                 .pressSubmitButton();
 
 
-        verificationWindow
+        registrationPage
                 .formVerificationWindow("Student Name", "Addis Ababa")
                 .formVerificationWindow("Student Email", "addisababa@mail.com")
                 .formVerificationWindow("Gender", "other")

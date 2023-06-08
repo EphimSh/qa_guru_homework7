@@ -2,7 +2,10 @@ package pages;
 
 
 import com.codeborne.selenide.SelenideElement;
+import pages.component.verification.TextBoxVerificationContainer;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,8 +16,8 @@ public class TextBoxPage {
             userEmail = $("#userEmail"),
             currentAddress = $("#currentAddress"),
             permanentAddress = $("#permanentAddress"),
-            submitButton = $("#submit");
-
+            submitButton = $("#submit"),
+            outputContainer = $("#output");
 
 
     public TextBoxPage openPage(){
@@ -26,6 +29,7 @@ public class TextBoxPage {
         userName.setValue(name + " " + lastName);
         return this;
     }
+
     public TextBoxPage setEmail(String email){
         userEmail.setValue(email);
         return this;
@@ -44,6 +48,10 @@ public class TextBoxPage {
     }
 
 
+    public TextBoxPage outputVerification(String key, String value){
+        outputContainer.$(withText(key)).shouldHave(text(value));
+        return this;
+    }
 
 
 }
