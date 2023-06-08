@@ -7,6 +7,7 @@ public class TextBoxTest extends TestBase {
     @Test
     void textBoxTest(){
         textBoxPage.openPage()
+                .removeBanner()
                 .setFullName("Addis", "Ababa")
                 .setEmail("addisababa@mail.com")
                 .setCurrentAddress("woods")
